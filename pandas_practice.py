@@ -38,7 +38,7 @@ pd.DataFrame(s)
 ser.rename('alphabets', inplace=True)
 
 
-''' Question 6 ''' #(my solution gave the wrong answer)
+''' Question 6 ''' # my solution gave the wrong answer
 pd.Series( [x for x in ser1 if x not in ser2] )
 
 
@@ -50,5 +50,26 @@ pd.Series(s)
 ''' Question 8 '''
 q_25 = ser.quantile(0.25)
 q_75 = ser.quantile(0.75)
-med = ser.median()
-max = ser.max()
+med_val = ser.median()
+max_val = ser.max()
+
+
+''' Question 9 '''
+ser.value_counts()
+
+
+''' Question 10 ''' # couldn't solve it
+s = ser.value_counts()
+s.head(2).append(s)
+
+
+''' Question 11 ''' # my solution gave the wrong answer
+pd.qcut(ser, 10, labels=['1st','2nd','3rd','4th','5th','6th','7th','8th', '9th', '10th'])
+
+
+''' Question 12 '''
+pd.DataFrame(ser.values.reshape(7,5))
+# link that was helpful https://stackoverflow.com/questions/14390224/reshape-of-pandas-series
+
+
+
