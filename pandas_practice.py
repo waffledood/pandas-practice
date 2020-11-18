@@ -109,3 +109,19 @@ ser.map(f)
 ser.diff().diff()
 # link that was helpful, this applies to Series https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html
 # not to be confused with the one for DataFrame https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.diff.html 
+
+
+''' Question 21 '''
+pd.to_datetime(ser)
+# link that was helpful https://www.geeksforgeeks.org/convert-a-series-of-date-strings-to-a-time-series-in-pandas-dataframe/
+
+
+''' Question 22 '''
+date_list = pd.to_datetime(ser)
+
+# Day of week
+date_list.map(lambda x: x.strftime("%B")).tolist()
+
+# link that was helpful https://stackoverflow.com/questions/6557553/get-month-name-from-number
+# https://docs.python.org/3/library/time.html#time.strftime
+# https://www.geeksforgeeks.org/convert-a-series-of-date-strings-to-a-time-series-in-pandas-dataframe/
