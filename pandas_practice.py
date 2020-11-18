@@ -72,4 +72,22 @@ pd.DataFrame(ser.values.reshape(7,5))
 # link that was helpful https://stackoverflow.com/questions/14390224/reshape-of-pandas-series
 
 
+''' Question 13 '''
+ser[ser % 3 == 0].index 
 
+
+''' Question 14 '''
+ser.loc[pos] 
+
+
+''' Question 15 '''
+pd.concat([ser1, ser2], axis=1)
+
+
+''' Question 16 ''' # wrong answer
+np.argwhere(ser1.isin(ser2))
+
+
+''' Question 17 '''
+((truth - pred) ** 2).mean()
+# link that was helpful https://stackoverflow.com/questions/41328922/python-pandas-simple-example-of-calculating-rmse-from-data-frame
