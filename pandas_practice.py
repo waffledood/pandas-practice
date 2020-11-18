@@ -91,3 +91,21 @@ np.argwhere(ser1.isin(ser2))
 ''' Question 17 '''
 ((truth - pred) ** 2).mean()
 # link that was helpful https://stackoverflow.com/questions/41328922/python-pandas-simple-example-of-calculating-rmse-from-data-frame
+
+
+''' Question 18 '''
+f = lambda a: a.capitalize()
+ser.map(f)
+# use of lambda: https://www.w3schools.com/python/python_lambda.asp
+# use of map() for pandas: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html 
+
+
+''' Question 19 '''
+f = lambda a: len(a)
+ser.map(f)
+
+
+''' Question 20 '''
+ser.diff().diff()
+# link that was helpful, this applies to Series https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.diff.html
+# not to be confused with the one for DataFrame https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.diff.html 
