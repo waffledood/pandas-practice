@@ -156,3 +156,42 @@ df[df.email.str.contains(pattern)]
 # link that was helpful https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html -> this is to only filter the INDEX/COLUMN's NAMES
 # https://stackoverflow.com/questions/15325182/how-to-filter-rows-in-pandas-by-regex 
 # https://stackoverflow.com/questions/20868394/changing-a-specific-column-name-in-pandas-dataframe 
+
+
+''' Question 26 '''
+fruit.name = "fruit"
+weights.name = "weights"
+df = pd.concat([fruit, weights], axis=1)
+df.groupby(['fruit']).mean()
+
+# link that was helpful https://www.kite.com/python/answers/how-to-merge-two-pandas-series-into-a-dataframe-in-python
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
+
+
+''' Question 27 ''' # honestly didn't know how to solve it
+# refer to explanation on "Euclidean Distance" in Wikipedia: https://en.wikipedia.org/wiki/Euclidean_distance
+# https://www.geeksforgeeks.org/pandas-compute-the-euclidean-distance-between-two-series/
+
+p = pd.Series([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+q = pd.Series([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
+
+dist = np.sqrt(np.sum([(a-b)*(a-b) for a, b in zip(x, y)]))
+
+
+''' Question 28 '''
+peak_df = ser[(ser.shift(1) < ser) & (ser.shift(-1) < ser)]
+peak = peak_df.index
+
+# link that was helpful https://stackoverflow.com/questions/48023982/pandas-finding-local-max-and-min
+
+
+''' Question 29 '''
+my_str = 'dbc deb abed gade'
+string = "".join(my_str.split(" "))
+from collections import Counter 
+min_char = Counter(string)
+min_char = min(min_char, key=min_char.get)
+
+final_str = min_char.join(my_str.split(" "))
+
