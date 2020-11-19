@@ -187,6 +187,8 @@ peak = peak_df.index
 
 
 ''' Question 29 '''
+# second half of the code was from a model answer, more efficient than my original solution
+# https://www.geeksforgeeks.org/python-least-frequent-character-in-string/
 my_str = 'dbc deb abed gade'
 string = "".join(my_str.split(" "))
 from collections import Counter 
@@ -194,4 +196,22 @@ min_char = Counter(string)
 min_char = min(min_char, key=min_char.get)
 
 final_str = min_char.join(my_str.split(" "))
+
+
+# link that was helpful https://www.geeksforgeeks.org/python-split-string-into-list-of-characters/
+
+
+# my long-winded approach
+# https://www.geeksforgeeks.org/python-split-string-into-list-of-characters/
+my_str = 'dbc deb abed gade'
+string_list = list("".join(my_str.split(" ")))
+num = pd.Series([1] * len(string_list))
+num.name = "num"
+char = pd.Series(string_list)
+char.name = "char"
+
+pd.concat([char, num], axis=1)
+pd.groupby(char).sum()
+
+
 
