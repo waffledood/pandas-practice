@@ -119,9 +119,40 @@ pd.to_datetime(ser)
 ''' Question 22 '''
 date_list = pd.to_datetime(ser)
 
-# Day of week
-date_list.map(lambda x: x.strftime("%B")).tolist()
+# Date:
+date_list.map(lambda x: x.strftime("%d")).tolist()
+
+# Week number:
+date_list.map(lambda x: x.strftime("%W")).tolist()
+
+# Day number of year:
+date_list.map(lambda x: x.strftime("%j")).tolist()
+
+# Day of week:
+date_list.map(lambda x: x.strftime("%A")).tolist()
 
 # link that was helpful https://stackoverflow.com/questions/6557553/get-month-name-from-number
 # https://docs.python.org/3/library/time.html#time.strftime
 # https://www.geeksforgeeks.org/convert-a-series-of-date-strings-to-a-time-series-in-pandas-dataframe/
+
+
+''' Question 23 '''
+ser.map(lambda x: pd.to_datetime('04 ' + x))
+
+
+''' Question 24 '''
+vowels = ['a','e','i','o','u']
+vowel_count = ser.map(lambda x: sum([x.lower().count(i) for i in vowels]))
+ser[vowel_count[vowel_count >= 2].index]
+
+# link that was helpful https://www.geeksforgeeks.org/sum-function-python/
+
+
+''' Question 25 '''
+df = emails.to_frame()
+df.columns = ['email']
+df[df.email.str.contains(pattern)]
+
+# link that was helpful https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html -> this is to only filter the INDEX/COLUMN's NAMES
+# https://stackoverflow.com/questions/15325182/how-to-filter-rows-in-pandas-by-regex 
+# https://stackoverflow.com/questions/20868394/changing-a-specific-column-name-in-pandas-dataframe 
