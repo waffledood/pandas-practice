@@ -215,3 +215,9 @@ pd.groupby(char).sum()
 
 
 
+''' Question 30 '''
+# not sure how to solve
+
+ser = pd.Series(np.random.randint(1,10,10), pd.date_range('2000-01-01', periods=10, freq='W-SAT'))
+ser
+
