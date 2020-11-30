@@ -214,10 +214,20 @@ pd.concat([char, num], axis=1)
 pd.groupby(char).sum()
 
 
-
 ''' Question 30 '''
 # not sure how to solve
 
 ser = pd.Series(np.random.randint(1,10,10), pd.date_range('2000-01-01', periods=10, freq='W-SAT'))
 ser
 
+
+''' Question 31 '''
+# not sure how to solve
+
+
+''' Question 32 ''' 
+
+
+''' Question 33 ''' 
+filepath = r""
+data = pd.read_csv(filepath, skiprows=lambda x: (x != 0) and not (x % 50))
