@@ -231,3 +231,9 @@ ser
 ''' Question 33 ''' 
 filepath = r""
 data = pd.read_csv(filepath, skiprows=lambda x: (x != 0) and not (x % 50))
+
+
+''' Question 34 '''
+filepath = r""
+df = pd.read_csv(filepath)
+df = df[['crim', 'medv']] 
