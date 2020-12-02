@@ -256,3 +256,15 @@ lambda x: x + 1
 f = lambda x: "Column " + f"\"{x}\"" + ", No. of rows: " + str(len(df[x].index)) + ", Datatype: " + str(df[x].dtypes) 
 
 list_col = [f(x) for x in df.columns]
+
+
+''' Question 38 '''
+max_price = df['Price'].max()
+index_max_price = df['Price'].idxmax()  
+df.iloc[index_max_price]
+
+''' Question 39 '''
+df.rename(columns={"Type": "CarType"}, inplace=True)
+f = lambda x: re.sub('.+', '_', x)
+
+df.rename(columns=lambda x: re.sub('\.','_',x))
