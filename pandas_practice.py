@@ -231,3 +231,5 @@ ser
 ''' Question 33 ''' 
 filepath = r""
 data = pd.read_csv(filepath, skiprows=lambda x: (x != 0) and not (x % 50))
+
+# link that was helpful: https://stackoverflow.com/questions/56589528/how-to-read-a-csv-file-every-other-row
