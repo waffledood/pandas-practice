@@ -247,8 +247,6 @@ df
 #num_col = len(df.columns)
 #num_rows = len(df.index)
 
-list_col = [x for x in df.columns]
-
 '''
 how lambdas work:
 lambda x: x + 1
@@ -256,3 +254,5 @@ lambda x: x + 1
 -> what's on the right of the colon (:), outputs that computation
 '''
 f = lambda x: "Column " + f"\"{x}\"" + ", No. of rows: " + str(len(df[x].index)) + ", Datatype: " + str(df[x].dtypes) 
+
+list_col = [f(x) for x in df.columns]
