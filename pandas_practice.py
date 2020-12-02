@@ -232,4 +232,12 @@ ser
 filepath = r""
 data = pd.read_csv(filepath, skiprows=lambda x: (x != 0) and not (x % 50))
 
+<<<<<<< HEAD
 # link that was helpful: https://stackoverflow.com/questions/56589528/how-to-read-a-csv-file-every-other-row
+=======
+
+''' Question 34 '''
+filepath = r""
+df = pd.read_csv(filepath)
+df = df[['crim', 'medv']] 
+>>>>>>> ae7acb6433d64bbfd3ddfc9ec6703f9e9ba1ea46
