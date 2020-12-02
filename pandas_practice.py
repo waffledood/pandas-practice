@@ -232,12 +232,27 @@ ser
 filepath = r""
 data = pd.read_csv(filepath, skiprows=lambda x: (x != 0) and not (x % 50))
 
-<<<<<<< HEAD
 # link that was helpful: https://stackoverflow.com/questions/56589528/how-to-read-a-csv-file-every-other-row
-=======
 
-''' Question 34 '''
+
+''' Question 36 '''
 filepath = r""
 df = pd.read_csv(filepath)
 df = df[['crim', 'medv']] 
->>>>>>> ae7acb6433d64bbfd3ddfc9ec6703f9e9ba1ea46
+
+
+''' Question 37 '''
+df 
+
+#num_col = len(df.columns)
+#num_rows = len(df.index)
+
+list_col = [x for x in df.columns]
+
+'''
+how lambdas work:
+lambda x: x + 1
+-> what's on the left of the colon (:), takes in that variable
+-> what's on the right of the colon (:), outputs that computation
+'''
+f = lambda x: "Column " + f"\"{x}\"" + ", No. of rows: " + str(len(df[x].index)) + ", Datatype: " + str(df[x].dtypes) 
